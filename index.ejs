@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar bg-success">
+        <div class="container d-flex justify-content-center">
+            <h2>Product Page</h2>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    <div class="container mt-3">
+        <% if (success && success.length> 0) { %>
+            <div class="alert alert-success">
+                <%= success[0] %>
+            </div>
+            <% } %>
+
+                <% if (error && error.length> 0) { %>
+                    <div class="alert alert-danger">
+                        <%= error[0] %>
+                    </div>
+                    <% } %>
+    </div>
+
+
+    <div class="d-flex">
+
+        <div class="bg-light mx-3 my-3" style="width: 250px">
+            <form action="/filter" method="POST">
+                <h3 class="fs-4 my-2">Range Option</h3>
+                <div class="d-flex flex-column gap-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="price" value="99-299" id="rang1" />
+                        <label class="form-check-label" for="rang1">99-299</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="price" value="299-599" id="rang2" />
+                        <label class="form-check-label" for="rang2">299-599</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="price" value="599-799" id="rang3" />
+                        <label class="form-check-label" for="rang3">599-799</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="price" value="799-999" id="rang4" />
+                        <label class="form-check-label" for="rang4">799-999</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="price" value="1000+" id="rang4" />
+                        <label class="form-check-label" for="rang4">1000+</label>
+                    </div>
+                </div>
+                <hr />
+                <h3 class="fs-4 my-3">Size Option</h3>
+                <div class="d-flex flex-column gap-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="S" id="size1" />
+                        <label class="form-check-label" for="size1">S</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="M" id="size2" />
+                        <label class="form-check-label" for="size2">M</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="L" id="size3" />
+                        <label class="form-check-label" for="size3">L</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="XXL" id="size4" />
+                        <label class="form-check-label" for="size4">XXL</label>
+                    </div>
+                </div>
+                <hr />
+                <h3 class="fs-4 my-3">Color Option</h3>
+                <div class="d-flex flex-column gap-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="color" value="Red" id="color1" />
+                        <label class="form-check-label" for="color1">Red</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="color" value="Green" id="color2" />
+                        <label class="form-check-label" for="color2">Green</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="color" value="Blue" id="color3" />
+                        <label class="form-check-label" for="color3">Blue</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="color" value="White" id="color4" />
+                        <label class="form-check-label" for="color4">White</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="color" value="Black" id="color4" />
+                        <label class="form-check-label" for="color4">Black</label>
+                    </div>
+                </div>
+                <h3 class="fs-4 my-3">Brand Option</h3>
+                <div class="d-flex flex-column gap-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand" value="nick" id="brand1" />
+                        <label class="form-check-label" for="brand1">nick</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand" value="addidas" id="brand2" />
+                        <label class="form-check-label" for="brand2">addidas</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand" value="us.polo" id="brand3" />
+                        <label class="form-check-label" for="brand3">us.polo</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand" value="ramond" id="brand4" />
+                        <label class="form-check-label" for="brand4">ramond</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand" value="hoffman" id="brand4" />
+                        <label class="form-check-label" for="brand4">hoffman</label>
+                    </div>
+                </div>
+                <hr />
+                <button type="submit">Apply</button>
+            </form>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="container">
+            <h2><a href="/add" class="btn bg-info">Add Product</a></h2>
+            <div class="d-flex justify-content-between">
+                <h3><a href="/dashboard" class="btn bg-success-subtle">DashBoard</a></h3>
+                <h3><a href="/register" class="btn bg-success-subtle">new_register</a></h3>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">size</th>
+                        <th scope="col">price</th>
+                        <th scope="col">color</th>
+                        <th scope="col">brand</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <% for(let i=0; i<product.length ; i++){%>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <%= i+1 %>
+                            </th>
+                            <td>
+                                <%= product[i].name %>
+                            </td>
+                            <td>
+                                <%= product[i].size %>
+                            </td>
+                            <td>
+                                <%= product[i].price %>
+                            </td>
+                            <td>
+                                <%= product[i].color %>
+                            </td>
+                            <td>
+                                <%= product[i].brand %>
+                            </td>
+                            <td><a href="/edit/<%= product[i]._id %>" class="btn bg-warning">Edit</a></td>
+                            <td><a href="/delete/<%= product[i]._id %>" class="btn bg-danger">Delete</a></td>
+
+
+                        </tr>
+
+
+                    </tbody>
+                    <%}%>
+            </table>
+        </div>
+
+        <p>Current Role: <%= role %>
+        </p>
+
+    </div>
+    <footer class="bg-dark text-white d-flex align-items-center justify-content-center  shadow-sm"
+        style="height: 60px;">
+        <div class="container text-center">
+            <span>© 2025 My App. All rights reserved.</span>
+        </div>
+    </footer>
+
+
+    <script>
+        // Auto-hide flash messages after 3 seconds
+        setTimeout(() => {
+            document.querySelectorAll('.alert').forEach(el => {
+                el.style.transition = 'opacity 0.5s ease';
+                el.style.opacity = '0';
+                setTimeout(() => el.remove(), 500);
+            });
+        }, 2000);
+    </script>
+</body>
+
+</html>
